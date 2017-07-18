@@ -18,9 +18,10 @@ function respond() {
 
       botRegexBM = /^\/beam/i; botRegexPR = /^\/rankings/; botRegexRK = /^\/rookies/; botRegexTL = /^\/teamlead/;
 
-      botRegexPL = /^\/playerlead/; botRegexBT = /^\/bot/;
+      botRegexPL = /^\/playerlead/; botRegexBT = /^\/bot/; botRegexLG = /^\/league/;
 
       
+
 
       
 
@@ -63,6 +64,15 @@ function respond() {
     this.res.writeHead(200);
 
     postMessage("http://www.freewebs.com/bradsdesigns/BotTutorial.html")
+
+    this.res.end();
+
+  }
+  else if(request.text && botRegexLG.test(request.text)) {
+
+    this.res.writeHead(200);
+
+    postMessage("http://www.daddyleagues.com/")
 
     this.res.end();
 
